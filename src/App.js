@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import FoodCardsMenu from './Menu/FoodCardsMenu';
+import NavBar from './Home/NavBar';
+import FindUs from './Find-Us/FindUs';
+import HomePage from './Home/HomePage';
+
 class App extends Component {
+      state = {
+        name: null,
+        price: null,
+        category: null,
+        spiceLevel: null,
+        img: null,
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
       </div>
     );
   }

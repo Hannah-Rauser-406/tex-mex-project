@@ -1,8 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import App from './App';
+import FoodCardsMenu from './Menu/FoodCardsMenu';
+import NavBar from './Home/NavBar';
+import FindUs from './Find-Us/FindUs';
+import HomePage from './Home/HomePage';
+
+
+ReactDOM.render((
+  <Router>
+    <div>
+
+        <NavBar />
+        <Route exact path="/food-cards-menu" component={FoodCardsMenu}/>
+        <Route path="/find-us" component={FindUs} />
+        <Route exact path="/" component={HomePage}/>
+
+    </div>
+  </Router>
+), document.getElementById('root'));
