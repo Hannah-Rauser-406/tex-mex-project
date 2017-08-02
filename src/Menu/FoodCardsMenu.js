@@ -5,13 +5,16 @@ const FoodCardsMenu = (props) => {
   console.log(data)
   const menu = data.items.map(function(menu, index){
     return(
-      <div key={index}>
+      <div key={index} className='food-card-container'>
         <div className='food-card'>
-          <p>{menu.name}</p>
-          <p>Category: {menu.category}</p>
-          <p>Price: ${menu.price}</p>
-          <p>Spice Level: {menu.spiceLevel}</p>
           <img src={menu.img} />
+          <div className='card-text-info'>
+            <p>{menu.name}</p>
+            <p>Category: {menu.category}</p>
+            <p>Price: ${menu.price}</p>
+            <p>Spice Level: {menu.spiceLevel}</p>
+          </div>
+
         </div>
       </div>
     )
