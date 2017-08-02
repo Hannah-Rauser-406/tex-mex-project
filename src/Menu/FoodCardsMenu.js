@@ -1,24 +1,27 @@
 import React from 'react';
-import data from './data';
+import data from '../data';
 
 const FoodCardsMenu = (props) => {
+  console.log(data)
+  const menu = data.items.map(function(menu, index){
+    return(
+      <div key={index}>
+        <div className='food-card'>
+          <p>{menu.name}</p>
+          <p>Category: {menu.category}</p>
+          <p>Price: ${menu.price}</p>
+          <p>Spice Level: {menu.spiceLevel}</p>
+          <img src={menu.img} />
+        </div>
+      </div>
+    )
+  })
   return(
     <div>
-      <h1>Menu</h1>
+    <h1>Menu</h1>
       <div className='menu-card-container'>
-      {
-        props.data.map((items, index) => {
-          return(
-            <div className='food-card'>
-              <h2>{data.items.name}</h2>
-              <h3>{data.items.category}</h3>
-              <h3>{data.items.price}</h3>
-              <h4>{data.items.spiceLevel}</h4>
-              <img src={data.items.img} />
-            </div>
-          )
-        })
-      }
+        <h3 className='chat-card'>{menu}</h3>
+
       </div>
     </div>
   )
